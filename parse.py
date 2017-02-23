@@ -1,6 +1,16 @@
 import sys
 
-
+# {
+#     endpoint_id: {
+#         "datacenter_latency": <datacenter_latency>,
+#         "cache": {
+#             "cache_id": <latency>,
+#         },
+#         "requests": {
+#             "video_id": <requests_count>
+#         }
+#     }
+# }
 def parse(file_path):
     with open(file_path) as file:
         line_args = file.readline().split(' ')
