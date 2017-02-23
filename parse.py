@@ -10,7 +10,7 @@ def parse(file_path):
         line_args = file.readline().split(' ')
         videos_size = [int(x) for x in line_args]
 
-        endpoints
+        endpoints = []
         for 
         return {
             'video': videos_size,
