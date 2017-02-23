@@ -31,6 +31,7 @@ def parse(file_path):
             [dc_latency, cache_servers] = [int(x) for x in line.split(' ')]
             endpoint = {
                 'datacenter_latency': dc_latency,
+                'cache_size': cache_size,
                 'cache': {},
                 'requests': {},
             }
