@@ -18,3 +18,4 @@ def generate_output(number_of_servers,entities):
             string+=str(i)
             string+=' '
         print(string)
+

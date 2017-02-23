@@ -4,4 +4,5 @@ def dist(caches, videos, endpoints):
     for cid in range(cache_cnt):
         cache_dist[cid] = []
 
-    return cache_dist
+    # return cache_dist
+    return {0: [2], 1: [3, 1], 2: [0, 1]}

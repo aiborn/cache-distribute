@@ -1,14 +1,16 @@
 import dist
 import parse
-import score
+from score import score
 import sys
 
 
 def main():
     input_file = sys.argv[1]
     [endpoints, caches, videos] = parse.parse(input_file)
-    out = dist.dist(endpoints, caches, videos)
-#     score = score('')
+    solution = dist.dist(endpoints, caches, videos)
+    result = score(endpoints, solution)
+
+    print(result)
 
 
 if __name__ == '__main__':
