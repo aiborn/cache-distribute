@@ -1,6 +1,6 @@
 import operator
 
-def dist(endpoints, caches, videos):
+def distribute(endpoints, caches, videos):
     video_requests = {}
 
     for endpoint_id, endpoint in endpoints.items():
@@ -21,9 +21,9 @@ def dist(endpoints, caches, videos):
         cache = []
         for video, requests in viral_videos:
             if len(viral_videos_sizes) < video:
-                pass
+                continue
 
-            video_size = viral_videos_sizes[video - 1]
+            video_size = viral_videos_sizes[video]
 
             if cache_size >= video_size:
                 cache_size -= video_size
