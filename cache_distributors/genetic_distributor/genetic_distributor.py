@@ -1,8 +1,14 @@
 import operator
 
+from . import popular_content_distributor
+from genetic_algorithm import GeneticAlgorithm
+from genetic_distributor import GeneticDistributor
+
 
 def distribute(endpoints, caches, videos):
     video_requests = {}
+
+    GeneticAlgorithm(GeneticDistributor(lasagna)).run()
 
     for endpoint_id, endpoint in endpoints.items():
         requests = endpoint["requests"]

@@ -1,6 +1,7 @@
 from enum import Enum
 
 from . import popular_content_distributor
+from genetic_distributor import genetic_distributor
 
 
 class DistributionStrategy(Enum):
@@ -14,5 +15,7 @@ class CacheDistributor():
         distribution = {}
         if strategy == DistributionStrategy.popular_content:
             distribution = popular_content_distributor.distribute(endpoints, caches, videos)
+        if strategy == DistributionStrategy.genetic:
+            distribution = genetic_distributor.distribute(endpoints, caches, videos)
 
         return distribution

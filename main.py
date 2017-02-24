@@ -10,8 +10,15 @@ def main():
     input_file = sys.argv[1]
     [endpoints, caches, videos] = parse(input_file)
 
+    #solution = CacheDistributor.distribute(
+    #    DistributionStrategy.popular_content,
+    #    endpoints,
+    #    caches,
+    #    videos
+    #)
+
     solution = CacheDistributor.distribute(
-        DistributionStrategy.popular_content,
+        DistributionStrategy.genetic,
         endpoints,
         caches,
         videos
