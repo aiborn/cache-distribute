@@ -24,7 +24,11 @@ def parse(file_path):
 
         # parse videos sizes
         line_args = file.readline().split(' ')
-        videos = [int(x) for x in line_args]
+        video_size = [int(x) for x in line_args]
+        videos_len = len(video_size)
+        videos = {}
+        for vid in range(videos_len):
+            videos[vid] = video_size[vid]
 
         # parse endpoints
         endpoints = {}
@@ -53,19 +57,3 @@ def parse(file_path):
             endpoints[endpoint_id]['requests'][video_id] = req_cnt
 
         return [endpoints, caches, videos]
-
-def main():
-    if len(sys.argv) < 2:
-        print('Need input file')
-        exit(1)
-
-    [endpoints, caches, videos_size] = parse(sys.argv[1])
-    for eid, e in endpoints.items():
-        print(eid, e)
-    print(caches)
-    print(videos_size)
-
-
-if __name__ == '__main__':
-    print(parse(sys.argv[1]))
-    main()
